@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-
   margin: 10 vh;
 }
 
 .App-header {
   min-height: 10vh;
   font-size: calc(10px + 2vmin);
+  padding-top: 5vh;
 }
 
 /* .input {

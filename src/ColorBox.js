@@ -36,15 +36,16 @@ export default function ColorBox() {
           Generated Color: {color}
         </div>
       </div>
-
       <br />
       <button onClick={() => setColor(randomColor())}>Generate</button>
-
       <br />
       <br />
+      <br />
 
+      <h3>Make your own color block (all values are optional):</h3>
+      <br />
       <div className="input">
-        <div>define hue: </div>
+        <div>color hue: </div>
 
         <input
           value={hue}
@@ -55,7 +56,7 @@ export default function ColorBox() {
 
         <br />
         <br />
-        <div>prefer light or dark?</div>
+        <div>light or dark?</div>
 
         <input
           value={lum}
@@ -64,21 +65,19 @@ export default function ColorBox() {
           }}
         />
       </div>
-
       <div className="input">
         <br />
         <br />
-        <div>define box height (px):</div>
+        <div>box height (in px):</div>
         <input
           value={height}
           onChange={(event) => {
             setHeight(event.currentTarget.value);
           }}
         />
-
         <br />
         <br />
-        <div>define box with (px):</div>
+        <div>box width (in px):</div>
         <input
           value={width}
           onChange={(event) => {

@@ -42,7 +42,7 @@ export default function ColorBox() {
       <br />
       <br />
 
-      <h3>Make your own color block (all values are optional):</h3>
+      <h3>Make your own color block (all values are optional): </h3>
       <br />
       <div className="input">
         <div>color hue: </div>

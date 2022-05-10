@@ -36,55 +36,84 @@ export default function ColorBox() {
           Generated Color: {color}
         </div>
       </div>
+
       <br />
+
       <button onClick={() => setColor(randomColor())}>Generate</button>
+
       <br />
       <br />
       <br />
 
-      <h3>Make your own color block (all values are optional): </h3>
-      <br />
-      <div className="input">
-        <div>color hue: </div>
-
-        <input
-          value={hue}
-          onChange={(event) => {
-            setHue(event.currentTarget.value);
-          }}
-        />
+      <form
+        className="input"
+        onSubmit={(event) => {
+          event.preventDefault();
+        }}
+      >
+        <h1>Optional: Make your own color block </h1>
+        <h2>(If input invalid/does not exist, random value applies)</h2>
 
         <br />
-        <br />
-        <div>light or dark?</div>
+        <label>
+          color hue:
+          <input
+            value={hue}
+            onChange={(event) => {
+              setHue(event.currentTarget.value);
+            }}
+          />
+        </label>
 
-        <input
-          value={lum}
-          onChange={(event) => {
-            setLum(event.currentTarget.value);
+        <br />
+
+        <label>
+          light/dark:
+          <input
+            value={lum}
+            onChange={(event) => {
+              setLum(event.currentTarget.value);
+            }}
+          />
+        </label>
+
+        <br />
+
+        <label>
+          box height (in px):
+          <input
+            value={height}
+            onChange={(event) => {
+              setHeight(event.currentTarget.value);
+            }}
+          />
+        </label>
+
+        <br />
+
+        <label>
+          box width (in px):
+          <input
+            value={width}
+            onChange={(event) => {
+              setWidth(event.currentTarget.value);
+            }}
+          />
+        </label>
+
+        <br />
+
+        <button
+          onClick={() => {
+            setLum('');
+            setHue('');
+            setHeight('');
+            setWidth('');
           }}
-        />
-      </div>
-      <div className="input">
-        <br />
-        <br />
-        <div>box height (in px):</div>
-        <input
-          value={height}
-          onChange={(event) => {
-            setHeight(event.currentTarget.value);
-          }}
-        />
-        <br />
-        <br />
-        <div>box width (in px):</div>
-        <input
-          value={width}
-          onChange={(event) => {
-            setWidth(event.currentTarget.value);
-          }}
-        />
-      </div>
+        >
+          reset
+        </button>
+      </form>
     </>
   );
 }

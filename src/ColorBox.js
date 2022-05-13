@@ -31,6 +31,7 @@ export default function ColorBox() {
             backgroundColor:
               hue || lum ? randomColor({ hue: hue, luminosity: lum }) : color,
             transition: '1.5s',
+            borderRadius: '100px',
           }}
         >
           Generated Color: {color}

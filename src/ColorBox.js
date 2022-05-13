@@ -12,30 +12,21 @@ export default function ColorBox() {
   return (
     <>
       <div
-        className="box-style"
         style={{
+          margin: 'center',
+          height: height ? height + 'px' : '20vh',
+          width: width ? width + 'px' : '20vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
+          backgroundColor:
+            hue || lum ? randomColor({ hue: hue, luminosity: lum }) : color,
+          transition: '1.5s',
+          borderRadius: '100px',
         }}
       >
-        <div
-          style={{
-            height: height ? height + 'px' : '20vh',
-            width: width ? width + 'px' : '20vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-            backgroundColor:
-              hue || lum ? randomColor({ hue: hue, luminosity: lum }) : color,
-            transition: '1.5s',
-            borderRadius: '100px',
-          }}
-        >
-          Generated Color: {color}
-        </div>
+        Generated Color: {color}
       </div>
 
       <br />

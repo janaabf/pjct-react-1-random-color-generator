@@ -6,27 +6,29 @@ import { useState } from 'react';
 export default function ColorBox() {
   const [color, setColor] = useState(randomColor());
   const [hue, setHue] = useState('');
-  const [lum, setLum] = useState('');
+  const [lum, setLum] = useState(''); // Luminosity
   const [height, setHeight] = useState('');
   const [width, setWidth] = useState('');
   return (
     <>
       <div
         style={{
-          margin: 'center',
+          margin: 'auto',
           height: height ? height + 'px' : '20vh',
           width: width ? width + 'px' : '20vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          textAlign: 'center',
+          alignSelf: 'center',
           backgroundColor:
             hue || lum ? randomColor({ hue: hue, luminosity: lum }) : color,
           transition: '1.5s',
           borderRadius: '100px',
+          fontWeight: 'bold',
         }}
       >
-        Generated Color: {color}
+        Generated Color: <br />
+        {color}
       </div>
 
       <br />
@@ -43,9 +45,10 @@ export default function ColorBox() {
           event.preventDefault();
         }}
       >
-        <h1>Optional: Make your own color block </h1>
-        <h2>(If input invalid/does not exist, random value applies)</h2>
-
+        <div>
+          <h1>Optional: customize your own color blob </h1>
+          <h2>(If input invalid/does not exist, random value applies)</h2>
+        </div>
         <br />
         <label>
           color hue:
